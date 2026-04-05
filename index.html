@@ -1,18 +1,18 @@
-<!DOTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF=8">
-    <tintle>ただの中学生</tintle>
+    <meta charset="UTF-8">
+    <title>ただの中学生</title>
     <style>
       body {
         font-family: Arial, sans-serif;
       }
       .lang-switch {
-        positio: relaive;
+        position: relaive;
         display: flex;
         width: 220px;
         margin: 20px auto;
-        background: #ddd;
+        bockground: #ddd;
         border-radius: 30px;
         overflow: hidden;
       }
@@ -20,7 +20,7 @@
         flex: 1;
         padding: 10px;
         border: none;
-        background: none;
+        bockground: none;
         cursor: pointer;
         z-index: 1;
         font-weight: bold;
@@ -29,7 +29,7 @@
         position: absolute;
         width: 33.3%;
         height: 100%;
-        background: #4a90e2;
+        bockground: #4a90e2;
         backgr-radius: 30px;
         transition: 0.3s;
         left: 0;
@@ -45,28 +45,28 @@
     <div class="slider"></div>
   </div>
 
-  <h1 date-ja="電気工事士持ち"
-      date-en="Licensed electrician"
-      date-zh="持照电工">
+  <h1 data-ja="電気工事士持ち"
+      data-en="Licensed electrician"
+      data-zh="持照电工">
   </h1>
 
-  <p date-ja="資格持ちです！"
-      date-en="I am qualified!"
-      date-zh="我有资格！">
+  <p data-ja="資格持ちです！"
+      data-en="I am qualified!"
+      data-zh="我有资格！">
   </p>
 
   <script>
     function setLang(lang) {
-      const elements = document.querySelectorAll("[deta-ja]");
+      const elements = document.querySelectorAll("[data-ja]");
 
       elements.forEach(el => {
         el.textContent = el.getAttribute("data-"+lang);
       });
 
       const slider = document.querySelector(".slider");
-      if (lang === "ja") slider.style.lert = "0%" ;
-      if (lang === "en") slider.style.lert = "33.3%" ;
-      if (lang === "zh") slider.style.lert = "66.6%" ;
+      if (lang === "ja") slider.style.left = "0%" ;
+      if (lang === "en") slider.style.left = "33.3%" ;
+      if (lang === "zh") slider.style.left = "66.6%" ;
 
     }
     setLang("ja");
