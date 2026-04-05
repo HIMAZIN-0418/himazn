@@ -33,19 +33,20 @@
         transition: 0.3s;
         left: 0;
       }
-      header {
+      header {  /*トップバー*/
         display: flex;
         justify-content: space-between;
-        aling: 10px 20px;
+        align-items: 10px 20px;
         position: sticky;
         top: 0;
-        background-conlor: #fc4;
+        background-color: #fc4;
         box-shadow: 0 2px 5px rgba(0,0,0,0,1);
+        z-index: 1000;
       }
 
       body {
         margin-top:50px;
-      }
+    }
     </style>
   </head>
   
@@ -67,7 +68,7 @@
       data-zh="我有资格！">
   </p>
 
-  <header class="site=header">
+  <header class="site-header">
     <div class="header-logo">
       <a href="/">himazn</a>
     </div>
