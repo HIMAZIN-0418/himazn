@@ -6,16 +6,39 @@
     <style>
       body {
         font-family: Arial, sans-serif;
+        margin: 0;
       }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        background-color: #fc4;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      .header-logo a {
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
       .lang-switch {
         position: relative;
         display: flex;
         width: 220px;
-        margin: 20px auto;
         background: #333;
         border-radius: 30px;
         overflow: hidden;
       }
+
       .lang-switch button {
         flex: 1;
         padding: 10px;
@@ -23,7 +46,10 @@
         cursor: pointer;
         z-index: 1;
         font-weight: bold;
+        color: #fff;
+        border: none;
       }
+
       .slider {
         position: absolute;
         width: 33.3%;
@@ -33,66 +59,49 @@
         transition: 0.3s;
         left: 0;
       }
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 10px 0;
-        position: sticky;
-        top: 0;
-        background-color: #fc4;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        z-index: 1000;
-        box-sizing: border-box;
-}
 
-      body {
-        margin-top:50px;
-    }
+      h1, p {
+        text-align: center;
+        margin: 20px;
+      }
     </style>
   </head>
-  
-<body>
-  <header class="site-header">
-  <div class="header-logo">
-    <a href="/">himazn</a>
-  </div>
-</header>
-  
-  <div class="lang-switch">
-    <button onclick="setLang('ja')">日本語</button>
-    <button onclick="setLang('en')">英語</button>
-    <button onclick="setLang('zh')">中国語</button>
-    <div class="slider"></div>
-  </div>
+  <body>
+    <header class="site-header">
+      <div class="header-logo">
+        <a href="/">himazn</a>
+      </div>
+      <div class="lang-switch">
+        <button onclick="setLang('ja')">日本語</button>
+        <button onclick="setLang('en')">英語</button>
+        <button onclick="setLang('zh')">中国語</button>
+        <div class="slider"></div>
+      </div>
+    </header>
 
-  <h1 data-ja="電気工事士持ち"
-      data-en="Licensed electrician"
-      data-zh="持照电工">
-  </h1>
+    <h1 data-ja="電気工事士持ち"
+        data-en="Licensed electrician"
+        data-zh="持照电工">
+    </h1>
 
-  <p data-ja="資格持ちです！"
-      data-en="I am qualified!"
-      data-zh="我有资格！">
-  </p>
+    <p data-ja="資格持ちです！"
+        data-en="I am qualified!"
+        data-zh="我有资格！">
+    </p>
 
-  <script>
-    function setLang(lang) {
-      const elements = document.querySelectorAll("[data-ja]");
+    <script>
+      function setLang(lang) {
+        const elements = document.querySelectorAll("[data-ja]");
+        elements.forEach(el => {
+          el.textContent = el.getAttribute("data-" + lang);
+        });
 
-      elements.forEach(el => {
-        el.textContent = el.getAttribute("data-"+lang);
-      });
-
-      const slider = document.querySelector(".slider");
-      if (lang === "ja") slider.style.left = "0%" ;
-      if (lang === "en") slider.style.left = "33.3%" ;
-      if (lang === "zh") slider.style.left = "66.6%" ;
-
-    }
-    setLang("ja");
-  </script>
-
-</body>
+        const slider = document.querySelector(".slider");
+        if (lang === "ja") slider.style.left = "0%";
+        if (lang === "en") slider.style.left = "33.3%";
+        if (lang === "zh") slider.style.left = "66.6%";
+      }
+      setLang("ja");
+    </script>
+  </body>
 </html>
