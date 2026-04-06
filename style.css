@@ -23,6 +23,13 @@ header {
   font-weight: bold;
   font-size: 20px;
 }
+.header-logo b {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 100px;
+}
+
 
 .lang-switch {
   position: relative;
