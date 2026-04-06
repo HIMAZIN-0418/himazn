@@ -6,7 +6,7 @@ function setLang(lang) {
 
 const slider = document.querySelector(".slider");
   if (lang === "ja") slider.style.left = "0%";
-  if (lang === "en") slider.style.left = "33.3%";
+  if (lang === "en") slider.style.left = "50.0%";
   if (lang === "zh") slider.style.left = "66.6%";
 }
 
