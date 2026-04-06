@@ -5,8 +5,8 @@ body {
 
 header {
   display: flex;
-  justify-content: space-detween;
-  align-items: canter;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 10px 20px;
   position: sticky;
@@ -34,14 +34,14 @@ header {
 }
 
 .lang-switch button {
-  flex: 1px;
+  flex: 1;
   padding: 10px;
   background: none;
   cursor: pointer;
   z-index: 1;
   font-weight: bold;
-  colot: #fff;
-  border:none;
+  color: #fff;
+  border: none;
 }
 
 .slider {
